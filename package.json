@@ -1,7 +1,7 @@
 {
   "name": "@liqd-js/normalize",
   "description": "Normalize input",
-  "version": "0.9.4",
+  "version": "0.9.6",
   "author": "radixxko",
   "license": "MIT",
   "main": "lib/normalize.js",
