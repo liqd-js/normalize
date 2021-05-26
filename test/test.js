@@ -1,6 +1,6 @@
 const assert = require('assert' );
 
-const Normalizer = require('../lib/normalizer');
+const Normalizer = require('../lib/normalize');
 
 describe( 'Tests', () =>
 {
@@ -127,11 +127,11 @@ describe( 'Tests', () =>
 	{
 		try
 		{
-			Normalizer({ foo: null }, { foo: { bar: { _required: true }}});
+			Normalizer({ foo: null }, { foo: { _required: true, bar: { _required: true }}});
 
 			assert.fail();
 		}
-		catch(e){ assert.equal( e.message, 'Invalid options: "foo" is of wrong type null, "object" is required' ); }
+		catch(e){ console.log( 'ERR', e );  assert.equal( e.message, 'Invalid options: "foo" is of wrong type null, "object" is required' ); }
 	});
 
 	it('should fail - required', function()
